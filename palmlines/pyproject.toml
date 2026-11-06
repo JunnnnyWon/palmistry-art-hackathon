@@ -1,0 +1,15 @@
+[project]
+name = "palmlines"
+version = "0.1.0"
+description = "웹캠 손바닥 인식 → 손금 추출 → 손 아웃라인 위 손금 시각화"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "mediapipe>=0.10.21",
+    "numpy>=1.26",
+    "scikit-image>=0.24",
+    "scipy>=1.13",
+    "torch>=2.2",
+]
+
+[tool.uv]
+package = false

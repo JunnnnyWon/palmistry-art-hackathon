@@ -1,0 +1,27 @@
+# 비밀값
+.env
+.env.*
+
+# 파이썬·OS
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# 다시 받을 수 있는 모델 파일 (palmlines/README.md 참고)
+palmlines/assets/checkpoints/
+palmlines/assets/*.task
+
+# 실행 중 생성되는 결과물
+palmlines/out/
+palmlines/captures/
+palmlines/.camera
+sessions/
+
+# 사람 얼굴이 찍힌 웹캠 테스트 사진
+palmlines/tests/testset/
+
+# 회의 원본 녹취록 (다른 참가자 발언 포함). 정리본만 올린다
+Transcript *.md
+오후회의록.md
+!.env.example

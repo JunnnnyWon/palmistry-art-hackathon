@@ -1,0 +1,868 @@
+{
+  "args": {
+    "model": "qwen/qwen3.5-9b",
+    "provider": "DeepInfra",
+    "temps": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      1.1,
+      1.3,
+      1.5,
+      1.7,
+      1.9
+    ],
+    "runs": 10,
+    "system": "한 문장으로 정의",
+    "prompt": "죽음에 대해 어떻게 생각해?",
+    "max_tokens": 400,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.1,
+    "seed": null,
+    "no_reasoning": true,
+    "workers": 6,
+    "summary": true,
+    "out": "results/openrouter/qwen35-9b_C.json",
+    "analyze": null,
+    "report": null
+  },
+  "results": [
+    {
+      "temperature": 0.1,
+      "outputs": [
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 존재를 이어가는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미와 가치를 더 선명하게 비추는 거울입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 더 깊이 성찰하게 하는 존재론적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        }
+      ],
+      "n": 10,
+      "unique": 4,
+      "non_modal": null,
+      "word_dist": 0.23952890247007896,
+      "char_dist": 0.23051390387479387,
+      "foreign": 0,
+      "avg_len": 65.8,
+      "errors": 0
+    },
+    {
+      "temperature": 0.3,
+      "outputs": [
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 더 깊이 성찰하게 하는 존재론적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미와 가치를 재발견하게 하는 존재론적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그로 인해 현재의 순간이 소중하게 여겨지는 의미를 부여하는 존재의 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그로 인해 현재의 삶이 소중하고 의미 있는 존재로 부각되는 자연스러운 순환의 일부입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적인 종착역이자, 그 생명이 지닌 의미와 가치를 비로소 드러내는 가장 중요한 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미와 가치를 재발견하게 하는 가장 중요한 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적인 종착역이자, 그 존재를 통해 삶의 의미와 가치를 비추는 거울입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.227e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 더 깊이 성찰하게 하는 존재론적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 삶의 의미를 완성하고 새로운 형태로 존재를 이어가는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 존재의 의미를 더 깊게 되살아나게 하는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        }
+      ],
+      "n": 10,
+      "unique": 9,
+      "non_modal": null,
+      "word_dist": 0.6542941433090176,
+      "char_dist": 0.5823438458511403,
+      "foreign": 0,
+      "avg_len": 62.2,
+      "errors": 0
+    },
+    {
+      "temperature": 0.5,
+      "outputs": [
+        {
+          "text": "죽음은 생명의 필수적인 종착역이자, 존재의 유한함이 오히려 그 순간의 가치와 의미를 극대화하게 하는 자연스러운 순환입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 의미를 부여하고 삶을 완성하게 하는 가장 깊은 철학적 성찰의 대상입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 이전의 모든 순간을 의미 있게 만드는 존재의 본질적 한계입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 종착역이자, 그 과정을 통해 삶의 의미를 부여하고 변화를 완성하는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.0785e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 존재의 의미를 더 깊이 있게 성찰하게 하는 가장 근본적인 한계이자 시작점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착역이자, 그 과정을 통해 의미를 부여받고 새로운 형태로 이어지는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.227e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적인 종착역이자, 그로 인해 현재의 삶이 소중하고 의미 있는 존재를 가능하게 하는 자연스러운 순환의 일부입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.5635e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착역이자, 그 과정을 통해 삶을 더욱 의미 있게 만드는 필수적인 부분입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.633e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착점이자, 존재의 의미를 더 깊이 있게 성찰하게 하는 필연적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.0785e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착점으로, 모든 존재가 피할 수 없는 필연적인 과정이자 새로운 시작을 위한 필수적인 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7680349504811049,
+      "char_dist": 0.6976755062004747,
+      "foreign": 0,
+      "avg_len": 64.2,
+      "errors": 0
+    },
+    {
+      "temperature": 0.7,
+      "outputs": [
+        {
+          "text": "죽음은 모든 생명체의 필연적인 종착역이자, 삶의 의미와 가치를 비추는 거울로서 존재의 순환을 완성하는 자연스러운 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.2665e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 종착역이자, 모든 존재가 반드시 맞이하는 자연스러운 전환점으로서 삶을 더욱 소중하게 여기게 하는 의미를 지닙니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.2665e-06
+        },
+        {
+          "text": "죽음은 모든 생명체의 필연적인 종착역으로, 생명의 가치와 의미를 더욱 선명하게 비추는 자연스러운 전환점이자 새로운 시작을 위한 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.8605e-06
+        },
+        {
+          "text": "죽음은 생명을 완성 짓는 불가피한 자연스러운 과정이자, 그 자체가 아닌 존재의 의미와 가치를 더욱 선명하게 비추는 거울입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.118e-06
+        },
+        {
+          "text": "죽음은 생명의 불가피한 종착역이자, 그 여정 동안 우리가 경험한 모든 사랑과 의미를 완성하고 새롭고 영원한 형태로 전환하는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.8605e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적 종말이자, 동시에 삶의 의미와 가치를 비추는 거울로서 존재의 한계를 인정하게 해주는 깊은 철학적 주제입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.5635e-06
+        },
+        {
+          "text": "죽음은 모든 생명체의 필연적인 종착역이자, 존재의 의미를 부여하고 새로운 시작을 가능하게 하는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 종착역이자, 존재의 의미를 더욱 선명하게 드러내는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.93e-06
+        },
+        {
+          "text": "죽음은 모든 생명체의 필연적인 종착역이자, 삶을 그 자체로 소중하게 만드며 새로운 존재로의 전환을 여는 자연스러운 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.2665e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 일부로서, 모든 존재가 필연적으로 맞이하는 자연스러운 종착점이자 새로운 가능성의 시작을 암시하는 영원한 휴식입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.5635e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8081603726044555,
+      "char_dist": 0.7273773911457604,
+      "foreign": 0,
+      "avg_len": 72.1,
+      "errors": 0
+    },
+    {
+      "temperature": 0.9,
+      "outputs": [
+        {
+          "text": "죽음은 생명의 필수적인 종말이자, 모든 존재가 피할 수 없는 자연스러운 과정으로 삶을 의미 있게 만듭니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.0785e-06
+        },
+        {
+          "text": "죽음은 모든 생명이 반드시 맞이하는 자연스러운 종착지이자, 삶을 그 어떤 것보다 더 소중하게 여기게 만드는 절대적인 경계입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.9695e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착점이자, 삶의 의미를 부여하고 변화를 촉발하는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.633e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적 종착역이자, 삶 그 자체를 의미 있게 만드는 가장 소중한 시간의 경계입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.227e-06
+        },
+        {
+          "text": "죽음은 생명을 완성하는 필연적인 종착역이자, 모든 존재가 겪는 가장 보편적이고 존엄한 자연법칙입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 모든 존재의 필연적인 종착역이자, 생명을 그보다 더 소중하고 의미 있게 만들어주는 본질적인 배경입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 삶의 필수적인 일부이자 모든 존재가 피할 수 없는 최종적인 종착역으로서, 그 의미를 부여하고 생의 가치를 더하는 자연스러운 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.2665e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적 종말이자, 삶을 그 자체로 의미 있게 만듭니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.1875e-06
+        },
+        {
+          "text": "죽음은 생명의 불가피한 종착지이자, 그로 인해 현재의 순간과 삶의 깊이가 더욱 빛나는 존재론적 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 모든 생명체의 필연적인 종착역이자, 현재의 삶을 더욱 소중하게 여기게 만드는 존재의 자연스러운 완성 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8536190946570315,
+      "char_dist": 0.7841677307296826,
+      "foreign": 0,
+      "avg_len": 60.2,
+      "errors": 0
+    },
+    {
+      "temperature": 1.1,
+      "outputs": [
+        {
+          "text": "죽음은 생명이라는 유한한 시간 속에서 우리의 존재를 완성하고, 그 의미를 더욱 각성하게 하는 필연적인 통로이자 새로운 시작의 가능성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.118e-06
+        },
+        {
+          "text": "죽음은 생명을 완성하는 자연스러운 종말이자, 삶의 의미와 가치를 더 깊게 반추하게 하는 필수적인 요소입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.227e-06
+        },
+        {
+          "text": "죽음은 모든 생명이 맞이할 필연적인 종착역이자, 오히려 그 유한함 덕분에 현재 순간의 소중함과 삶의 의미를 더욱 깊이 있게 깨닫게 하는 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.4545e-06
+        },
+        {
+          "text": "죽음은 생명이 가진 필연적인 종착역으로서, 그 존재는 오히려 생의 가치와 의미를 더욱 선명하게 비추는 거울이자 삶을 완성하게 하는 마지막 단추입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.603e-06
+        },
+        {
+          "text": "죽음은 삶의 필연적인 종착점이 아니라, 오히려 각 순간에 의미를 부여하고 현재를 소중히 여기게 만드는 삶의 본질적인 일부입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        },
+        {
+          "text": "죽음은 삶의 자연스러운 결말이자 존재의 의미를 완성하게 하는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 5.8905e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 종착점이면서도, 그 과정과 의미를 통해 삶의 가치를 더욱 빛나게 하는 존재론적 필수조건입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.3755e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적이고 불가피한 종착점으로, 그 존재가 생을 의미 있게 만들며 자연계의 순환과 새로운 시작을 가능하게 하는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.8605e-06
+        },
+        {
+          "text": "죽음은 모든 존재의 필연적 종착점이자, 삶의 의미와 가치 그 자체를 정의해내는 근본적인 원동력입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필연적 종착역이자, 삶의 의미를 부여하고 변화와 재탄생을 가능하게 하는 존재론적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8602837059735822,
+      "char_dist": 0.8093088452079176,
+      "foreign": 0,
+      "avg_len": 68.4,
+      "errors": 0
+    },
+    {
+      "temperature": 1.3,
+      "outputs": [
+        {
+          "text": "죽음은 모든 존재가 반드시 마주하는 삶의 필연적이고 불가피한 종착역으로, 현재의 삶을 더욱 소중하게 여기게 하거나 영적인 의미를 부여하는 동시에 새로운 형태로의 변형을 의미합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.603e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착점이면서도, 그 의미를 더하게 하는 존재의 영원한 리듬입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.7815e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적인 종착지로서, 그 끝을 통해 현재의 순간이 소중해지고 생명 자체가 의미를 갖게 하는 근본적인 가치이자 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        },
+        {
+          "text": "죽음은 삶의 필연적이고 불가피한 종착역이자, 그 과정이 주는 의미와 가치를 더욱 선명하게 드러내게 하는 존재론적 틀입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.2665e-06
+        },
+        {
+          "text": "죽음은 삶의 필수적인 일부로서, 존재를 완성시키고 새로운 가능성을 여는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.336e-06
+        },
+        {
+          "text": "죽음은 모든 존재의 필연적인 종말이자, 생명이 그 한계를 통해 의미를 부여받고 변화의 가능성을 열어주는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 삶의 필연적인 종착역이자, 존재의 유한함이 오히려 그 순간의 소중함과 깊이를 배가시키는 자연스러운 순환의 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.8605e-06
+        },
+        {
+          "text": "죽음은 생명이 그 끝을 맞이하는 불가피한 순간이자, 오히려 현재의 삶을 더욱 소중하게 여기게 하며 존재의 의미를 깊이 있게 조명하는 자연스러운 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.009e-06
+        },
+        {
+          "text": "죽음은 생명의 필수적인 종착점으로, 모든 존재가 피할 수 없는 자연스러운 과정이며 이를 통해 생명은 그 의미를 더 깊이 있게 획득하게 됩니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.118e-06
+        },
+        {
+          "text": "죽음은 생명을 완성 짓는 필연적이고 존경스러운 자연스러운 순환이자, 모든 존재가 갖는 가장 진한 의미 부여의 순간입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.9695e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8813599170952353,
+      "char_dist": 0.8267414406522681,
+      "foreign": 0,
+      "avg_len": 71.7,
+      "errors": 0
+    },
+    {
+      "temperature": 1.5,
+      "outputs": [
+        {
+          "text": "죽음은 생명의 필수적인 종착역이자 새로운 가능성으로 여겨지는 불가피하면서도神秘的한 자연적 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.93e-06
+        },
+        {
+          "text": "죽음은 삶의 필연적 결말이자, 현재의 존재 의미를 더욱 선명하게 비추며 새로운 변화를 가능하게 하는 자연스러운 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적 종말이자, 존재의 의미를 더듬게 만드는 마지막 경계입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.4845e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착점으로, 생명의 가치와 의미를 더 빛내게 하는 필수적인 과정이자 필연입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.227e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종말이자, 오히려 그 존재 의미를 더 선명하게 드러내는 삶을 완성하는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 삶의 불가피한 종착점으로, 생명의 가치를 재고하게 하而我们를 완성하는 필연적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.0785e-06
+        },
+        {
+          "text": "죽음은 모든 생명체의 필수적인 자연스러운 종착점으로, 생명의 가치를 드러내고 변화를 위한 새로운 시작을 여는 철학적 serta 생물학적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.118e-06
+        },
+        {
+          "text": "죽음은 삶의 불가피한 종말이자, 존재의 무게를 느끼게 하고 새로운 가치를 발견하게 하는 필연적인 여정의 끝이 아닙니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 모든 생명체에게 필연적으로 닥치는 생의 자연스러운 마침이자, 현재의 삶을 그 어느 때보다도 소중하게 만들어주는 의미 있는 경계선입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.712e-06
+        },
+        {
+          "text": "죽음은 인간 존재의 불가피한 종착점으로, 생명체에게 휴식을 부여하고 동시에 삶의 무한한 가치와 의미를 반추하게 하는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8673408023497452,
+      "char_dist": 0.809465355488731,
+      "foreign": 2,
+      "avg_len": 64.9,
+      "errors": 0
+    },
+    {
+      "temperature": 1.7,
+      "outputs": [
+        {
+          "text": "죽음은 모든 존재의 피할 수 없는 필연이자, 유한한 삶을 통해 그 소중함과 의미를 가장 깊이 있게 드러내는 자연스러운 결말입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.118e-06
+        },
+        {
+          "text": "죽음은 생명을 통해 생명체의 존엄성을 완성하고 우주적인 순환의 한 갈래로서 새로운 의미를 열어주는 필연적인 변모 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.9695e-06
+        },
+        {
+          "text": "죽음은 모든 생명체가 반드시 마주하는 자연스러운 종착지이자,有限的한 시간이라는 사실을 안 우리가 현재의 생명을 더 소중하고 의미 있게 누릴 수 있게 하는 영원한 동기부여입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.4545e-06
+        },
+        {
+          "text": "죽음은 삶을 가능하게 하는 자연스러운 종말이자, 우리 존재의 한정성을 통해 그 가치를 극대화하게 하는 필연적인 완결입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.821e-06
+        },
+        {
+          "text": "죽음은 삶의 필수적인 완성 단계로서, 유한함을 통해 현재의 소중함을 일깨워주고 새로운 존재로 이어지는 자연스러운 순환이자 삶의 깊이와 의미를 부여하는 필연적인 존재입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.4545e-06
+        },
+        {
+          "text": "죽음은 삶을 완성시키고 그 의미를 부여하는 자연스러운 전환점이자, 모든 존재의 불가피한 최후입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.7815e-06
+        },
+        {
+          "text": "죽음은 생명이 모든 가능한 경험과 의미를 다한 후 자연스럽고 필수적인 마침표를 치며, 오히려 그것이 존재하지 않았다면 현재의 삶을 소중히 여기는 시혜적 배경을 제공한다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.7515e-06
+        },
+        {
+          "text": "죽음은 생명을 완성하는 자연스러운 과정이자, 삶의 의미를 더욱 선명하게 비추는 필수적인 국면입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 6.93e-06
+        },
+        {
+          "text": "죽음은 생명을 완성 짓는 필연적인 결론이자, 모든 존재가 거닐어가는 우주적인 리듬의 자연스러운 한 부분을 이룹니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.9695e-06
+        },
+        {
+          "text": "죽음은 모든 생명이 필연적으로 마주하는 종착점이면서도, 그 순간이 생의 모든 의미를 깊이 있게 형성하고 완성시키는不可或缺的한 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.9695e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8815078333863825,
+      "char_dist": 0.84403039112992,
+      "foreign": 2,
+      "avg_len": 74.6,
+      "errors": 0
+    },
+    {
+      "temperature": 1.9,
+      "outputs": [
+        {
+          "text": "죽음은 생명 주계의 필연적인 종료이자 새로운 변화와 성장을 위한 필수 불가결한 통로로, 인간에게 존재의 소중함과 삶의 의미를 절실하게 깨닫게 합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.009e-06
+        },
+        {
+          "text": "죽음은 삶이 온전한 의미를 가질 수 있는 불가피한 한계이자, 그 동안 산 일들을 새롭고 명확한 형태로 자리 잡게 하는 자연스러운 여정의 종착점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.306e-06
+        },
+        {
+          "text": "죽음은 생명과 기억으로 가득한 인간의 유한함에서 비롯되는 필연적인 전환이자, 그 소중함을 일깨우는 생명의 여정 한節目입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.415e-06
+        },
+        {
+          "text": "죽음은 삶의 필연적 귀결과 의미를 더하는 자연스러운 완성 단계로서, 제한된 시간이 오히려 현재의 소중함을 각성시키게 하는 통찰입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 8.712e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종결이자, 삶의 의미와 가치를 부각시키며 우리를 끊임없이 성찰하게 만드는 필수적인 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 모든 생명의 필수적인 끝맺음이 sekaligus 자연스러운 순환을 통해 새롭고 지속적인 생명력을 태어날 수 있도록 길을 터주는 철학적이자 생태학적 전환점입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 9.009e-06
+        },
+        {
+          "text": "죽음은 생명의 필연적이고 필수적인 종언이자, 현재의 고통이나 한계를 넘어 더 높은 존재로 변모하는 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.6725e-06
+        },
+        {
+          "text": "죽음은 모든 생명체가 필연적으로 마주치는 종착점이자, 끝이 아닌 새로운 시작과 변화를 위한 필수적인 자연법칙입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명이 필연적으로 맞이하는 끝이자, 삶을 더 깊이 있게 소중히 여기게 하는 가장 강력한 의미가 담긴 통로입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.524e-06
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 종착점이자, 우리를 삶 그 자체를 소중히 여기게 만드는 필수적인 부분입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 7.0785e-06
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.9220300215175297,
+      "char_dist": 0.8682302173921226,
+      "foreign": 1,
+      "avg_len": 71.5,
+      "errors": 0
+    }
+  ],
+  "cost": 0.0007846245,
+  "providers": {
+    "DeepInfra": 100
+  }
+}

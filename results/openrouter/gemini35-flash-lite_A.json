@@ -1,0 +1,868 @@
+{
+  "args": {
+    "model": "google/gemini-3.5-flash-lite",
+    "provider": "Google AI Studio",
+    "temps": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      1.1,
+      1.3,
+      1.5,
+      1.7,
+      1.9
+    ],
+    "runs": 10,
+    "system": "한 문장으로 정의",
+    "prompt": "죽음에 대해 어떻게 생각해?",
+    "max_tokens": 400,
+    "top_p": null,
+    "top_k": null,
+    "min_p": null,
+    "seed": null,
+    "no_reasoning": false,
+    "workers": 6,
+    "summary": true,
+    "out": "results/openrouter/gemini35-flash-lite_A.json",
+    "analyze": null,
+    "report": null
+  },
+  "results": [
+    {
+      "temperature": 0.1,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 1,
+      "non_modal": null,
+      "word_dist": 0.0,
+      "char_dist": 0.0,
+      "foreign": 0,
+      "avg_len": 35.0,
+      "errors": 0
+    },
+    {
+      "temperature": 0.3,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.10588235294117647,
+      "char_dist": 0.12666666666666665,
+      "foreign": 0,
+      "avg_len": 38.7,
+      "errors": 0
+    },
+    {
+      "temperature": 0.5,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.10588235294117647,
+      "char_dist": 0.12666666666666665,
+      "foreign": 0,
+      "avg_len": 38.7,
+      "errors": 0
+    },
+    {
+      "temperature": 0.7,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 1,
+      "non_modal": null,
+      "word_dist": 0.0,
+      "char_dist": 0.0,
+      "foreign": 0,
+      "avg_len": 35.0,
+      "errors": 0
+    },
+    {
+      "temperature": 0.9,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.10588235294117647,
+      "char_dist": 0.12666666666666665,
+      "foreign": 0,
+      "avg_len": 38.7,
+      "errors": 0
+    },
+    {
+      "temperature": 1.1,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.18823529411764706,
+      "char_dist": 0.2251851851851851,
+      "foreign": 0,
+      "avg_len": 42.4,
+      "errors": 0
+    },
+    {
+      "temperature": 1.3,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.10588235294117647,
+      "char_dist": 0.12666666666666665,
+      "foreign": 0,
+      "avg_len": 38.7,
+      "errors": 0
+    },
+    {
+      "temperature": 1.5,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 1,
+      "non_modal": null,
+      "word_dist": 0.0,
+      "char_dist": 0.0,
+      "foreign": 0,
+      "avg_len": 35.0,
+      "errors": 0
+    },
+    {
+      "temperature": 1.7,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 1,
+      "non_modal": null,
+      "word_dist": 0.0,
+      "char_dist": 0.0,
+      "foreign": 0,
+      "avg_len": 35.0,
+      "errors": 0
+    },
+    {
+      "temperature": 1.9,
+      "outputs": [
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 마침표이자, 모든 생명에게 공평하게 주어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 9.5436e-05
+        },
+        {
+          "text": "죽음은 삶을 더욱 소중하고 의미 있게 만드는 유한한 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "Google AI Studio",
+          "cost": 4.8411e-05
+        }
+      ],
+      "n": 10,
+      "unique": 2,
+      "non_modal": null,
+      "word_dist": 0.10588235294117647,
+      "char_dist": 0.12666666666666665,
+      "foreign": 0,
+      "avg_len": 38.7,
+      "errors": 0
+    }
+  ],
+  "cost": 0.005170274999999996,
+  "providers": {
+    "Google AI Studio": 100
+  }
+}

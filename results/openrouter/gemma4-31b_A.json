@@ -1,0 +1,868 @@
+{
+  "args": {
+    "model": "google/gemma-4-31b-it",
+    "provider": "DeepInfra",
+    "temps": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      1.1,
+      1.3,
+      1.5,
+      1.7,
+      1.9
+    ],
+    "runs": 10,
+    "system": "한 문장으로 정의",
+    "prompt": "죽음에 대해 어떻게 생각해?",
+    "max_tokens": 400,
+    "top_p": null,
+    "top_k": null,
+    "min_p": null,
+    "seed": null,
+    "no_reasoning": false,
+    "workers": 6,
+    "summary": true,
+    "out": "results/openrouter/gemma4-31b_A.json",
+    "analyze": null,
+    "report": null
+  },
+  "results": [
+    {
+      "temperature": 0.1,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 돌아가는 생의 완성 단계라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명이 자연의 순환으로 돌아가는 필연적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 돌아가는 완전한 휴식이자 새로운 시작으로의 전환점이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명체가 자연의 섭리에 따라 원래의 상태로 돌아가는 필연적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 돌아가는 완전한 휴식이자 새로운 변화의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.37006e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 완성이며 새로운 상태로의 전환을 의미하는 자연스러운 섭리라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 존재의 완성이자 새로운 상태로의 전환을 의미하는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        }
+      ],
+      "n": 10,
+      "unique": 8,
+      "non_modal": null,
+      "word_dist": 0.6359318663949682,
+      "char_dist": 0.5556447839649359,
+      "foreign": 0,
+      "avg_len": 72.6,
+      "errors": 0
+    },
+    {
+      "temperature": 0.3,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하는 필연적인 마침표이자, 새로운 상태로의 전환입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 돌아가는 완전한 휴식이자 새로운 시작으로의 전환점이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 모든 소란함이 멈추고 완전한 평온으로 돌아가는 자연스러운 회귀라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 존재의 완성이자 새로운 형태의 시작으로 나아가는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 여정에 마침표를 찍음으로써, 역설적으로 현재의 삶을 더욱 가치 있고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 모든 소음이 멈추고 완전한 평온으로 돌아가는 자연스러운 회귀의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명체가 마주하는 자연스럽고 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 소멸을 통해 역설적으로 현재의 삶을 더욱 가치 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.37006e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하는 자연스러운 마침표이자, 새로운 상태로의 전환입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.96614e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7316735149463786,
+      "char_dist": 0.6673391561398221,
+      "foreign": 0,
+      "avg_len": 71.3,
+      "errors": 0
+    },
+    {
+      "temperature": 0.5,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 모든 집착과 고통이 사라지고 완전한 정적과 평온으로 돌아가는 자연스러운 회귀 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 삶의 끝이 아니라, 생이라는 유한한 시간 속에 의미와 가치를 부여하는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.06712e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 마침표이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶의 필연적인 마침표이자, 역설적으로 현재의 삶을 더욱 가치 있고 유한하게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 돌아가는 완전한 휴식이자 새로운 시작으로의 전환점이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 존재의 완성이자 새로운 형태의 시작으로 이어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 모든 소란함이 잦아드는 절대적인 안식이며, 동시에 남겨진 이들에게는 삶의 소중함을 일깨워주는 가장 강력한 거울이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 3.22839e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 서사를 완성하며, 존재의 소멸이자 새로운 형태의 회귀로 이어지는 자연스러운 생의 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 마침표이자, 존재의 모든 집착과 고통이 사라지고 완전한 평온으로 돌아가는 자연스러운 회귀의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 부여된 마지막 마침표이자, 존재의 소멸을 통해 역설적으로 현재의 삶을 가장 가치 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7823393526059103,
+      "char_dist": 0.7041832981275012,
+      "foreign": 0,
+      "avg_len": 77.0,
+      "errors": 0
+    },
+    {
+      "temperature": 0.7,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연스럽게 회귀하는 생명의 완성 단계라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하는 필연적인 마침표이자, 새로운 상태로의 전환입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶의 끝이 아니라, 생이라는 유한한 여정에 마침표를 찍음으로써 역설적으로 현재의 삶을 더욱 가치 있고 소중하게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.72349e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명이 자연의 거대한 흐름으로 돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명체가 자연의 섭리에 따라 돌아가는 필연적인 마침표이자 새로운 상태로의 전환입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 마침표이자, 존재의 소멸을 통해 역설적으로 현재의 삶을 가장 가치 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간표에 찍히는 마침표이자, 역설적으로 현재의 삶을 더욱 가치 있고 소중하게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.52153e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명이 자연의 거대한 흐름으로 되돌아가는 필연적인 마침표이자 새로운 상태로의 전환이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.82447e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 자연의 순리로 돌아가는 필연적인 마침표이자 새로운 형태의 시작입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마침표이자, 삶이라는 유한한 시간을 더욱 가치 있고 의미 있게 만드는 거울과 같은 것입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7360003433316854,
+      "char_dist": 0.669568420870645,
+      "foreign": 0,
+      "avg_len": 76.3,
+      "errors": 0
+    },
+    {
+      "temperature": 0.9,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재의 소멸인 동시에 새로운 상태로의 전환을 의미하는 생명의 자연스러운 완성입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 서사를 완성하며, 존재의 끝이 아닌 새로운 형태의 침묵이자 자연스러운 생의 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 부여된 마지막 마침표이자, 존재의 완성과 새로운 형태의 회귀로 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 서사를 완성하며, 존재의 소멸이자 동시에 새로운 형태의 안식이나 전환으로 이어지는 자연스러운 생의 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명이 자연의 질서로 돌아가는 필연적이고 평온한 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.52153e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 여정을 완성하고, 존재의 형태가 변화하여 자연의 거대한 순환 속으로 되돌아가는 필연적인 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 존재가 자연의 거대한 흐름으로 되돌아가 완성되는 마지막 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마침표이자, 삶의 유한함을 통해 현재의 순간을 더욱 가치 있게 만드는 거울과 같은 것입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        }
+      ],
+      "n": 10,
+      "unique": 9,
+      "non_modal": null,
+      "word_dist": 0.7742547183446266,
+      "char_dist": 0.7020874716858759,
+      "foreign": 0,
+      "avg_len": 68.6,
+      "errors": 0
+    },
+    {
+      "temperature": 1.1,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간표에 찍히는 마지막 마침표이자, 존재의 소멸이 아닌 새로운 형태의 완성 혹은 안식으로 나아가는 필연적인 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.72349e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에서 존재의 의미를 완성하며, 새로운 상태로의 전환이자 자연스러운 생명의 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 맞이하는 자연스럽고 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 완성이자, 삶의 유한함을 통해 현재의 매 순간을 더욱 소중하게 만드는 거울 같은 존재라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하는 마침표이자, 자연스러운 생의 완성이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.96614e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하는 필연적인 마침표이자, 새로운 상태로의 전환 혹은 완전한 안식의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 생명의 필연적인 마침표이자, 삶의 가치를 완성하고 새로운 형태의 존재나 평온으로 이어지는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간표에 찍히는 마지막 마침표이자, 존재가 자연의 거대한 흐름으로 되돌아가는 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 생명의 필연적인 마침표이자, 삶이라는 유한한 시간을 더욱 가치 있고 소중하게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 여정에 마침표를 찍음으로써, 역설적으로 현재의 매 순간을 더욱 가치 있고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7750717871465332,
+      "char_dist": 0.7006633628984048,
+      "foreign": 0,
+      "avg_len": 73.2,
+      "errors": 0
+    },
+    {
+      "temperature": 1.3,
+      "outputs": [
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 끝이자, 동시에 삶의 매 순간을 더욱 가치 있고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        },
+        {
+          "text": "죽음은 삶의 끝이자 완성이며, 모든 생명체가 마주하는 필연적인 정점이자 새로운 형태의 안식입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.96614e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 존재가 마주하는 자연스럽고 필연적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶의 유한함을 완성함으로써 현재의 매 순간을 더욱 가치 있고 소중하게 만드는 마지막 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마침표이자, 역설적으로 삶을 더욱 소중하고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶의 유한함을 통해 현재의 순간을 더욱 가치 있게 만드는, 생의 자연스럽고 필연적인 완성 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        },
+        {
+          "text": "죽음은 삶의 끝이 아니라, 존재의 형태가 변화하며 생의 모든 순간에 의미를 부여하는 필연적인 마침표이자 완성이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶의 완성점이자, 존재가 사라짐으로써 오히려 삶의 매 순간을 더욱 가치 있게 만드는 역설적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 생명의 필연적인 마침표이자, 역설적으로 삶의 유한함을 통해 현재의 매 순간을 더욱 가치 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간의 마침표이자, 생의 모든 순간을 의미 있게 만드는 필연적인 완성이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.7766315137986505,
+      "char_dist": 0.7199410795666479,
+      "foreign": 0,
+      "avg_len": 66.4,
+      "errors": 0
+    },
+    {
+      "temperature": 1.5,
+      "outputs": [
+        {
+          "text": "죽음이란 생명의 자연스러운 마침표이자, 삶의 모든 순간을 더욱 소중하고 의미 있게 만드는 궁극적인 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에 의미와 가치를 부여하며, 모든 생명이 자연의 순환으로 돌아가는 불가피하고도 당연한 과정입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 생이라는 유한한 서사를 완성하며, 존재의 끝이 아닌 삶의 매 순간을 더욱 소중하고 의미 있게 만드는 궁극적인 거울이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마침표이자, 삶이라는 유한한 시간을 더욱 가치 있고 의미 있게 만드는 거울 같은 존재라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.11761e-05
+        },
+        {
+          "text": "죽음은 삶의 끝이 아니라, 생이라는 한정된 시간을 완성하고 의미를 부여하는 필연적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶의 완전한 마침표이자, 역설적으로 현재의 삶을 더욱 소중하고 의미 있게 만드는 필수적인 완성 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.1681e-05
+        },
+        {
+          "text": "죽음은 삶의 유한함을 통해 현재의 순간을 더욱 가치 있게 만드는, 생의 자연스러운 완성이자 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.06712e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 완성형이자, 삶이라는 한정된 시간을 더욱 가치 있게 만드는 절대적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.01663e-05
+        },
+        {
+          "text": "죽음은 삶이라는 이야기의 끝이 아니라, 생명이 자연의 거대한 흐름으로 되돌아가 완성되는 마지막 과정이자 새로운 시작으로 향하는 경계라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶의 유한함을 통해 역설적으로 현재의 매 순간을 가장 가치 있게 만드는 생의 마침표이자 자연스러운 섭리라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8200936684429754,
+      "char_dist": 0.7457249647988944,
+      "foreign": 0,
+      "avg_len": 69.6,
+      "errors": 0
+    },
+    {
+      "temperature": 1.7,
+      "outputs": [
+        {
+          "text": "죽음은 생명이라는 유한한 여정이 완성되는 자연스러운 마침표이자, 삶의 가치를 더욱 소중하게 만드는 역설적인 거울이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.37006e-05
+        },
+        {
+          "text": "죽음은 삶의 완성이자 새로운 시작을 위한 필연적인 매듭이며, 역설적으로 그렇기에 현재의 삶을 더욱 가치 있고 의미 있게 만드는 거울 같은 존재라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 서사를 완성하며, 매 순간의 가치를 비로소 증명하게 하는 필연적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마침표이자, 삶의 소중함과 유한함을 깨닫게 하여 현재를 더 가치 있게 살아가게 하는 거울과 같습니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 이야기가 완결됨으로써 비로소 그 가치와 의미가 완성되는 자연스럽고 필연적인 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.21859e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 끝에 찾아오는 필연적인 마무리이자, 존재의 소멸을 통해 비로소 삶의 매 순간을 소중하게 만드는 거울과 같은 것입니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.62251e-05
+        },
+        {
+          "text": "죽음은 모든 생명이 마주하는 필연적인 끝이자, 역설적으로 현재의 삶을 더욱 소중하고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 서사를 완성함으로써 생의 매 순간을 더욱 가치 있게 만드는 마지막 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.96614e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마무리이자, 삶이라는 유한한 시간에 가치를 부여하는 필연적인 끝이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.86516e-05
+        },
+        {
+          "text": "죽음은 삶이라는 이야기의 마침표이자, 존재의 모든 한계가 사라지며 완전한 평온과 안식으로 돌아가는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.37006e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.8507574888693172,
+      "char_dist": 0.7891573578963114,
+      "foreign": 0,
+      "avg_len": 70.3,
+      "errors": 0
+    },
+    {
+      "temperature": 1.9,
+      "outputs": [
+        {
+          "text": "죽음은 모든 생명에게 예정된 필연적인 마침표이자, 삶의 소중함과 유한함을 깨닫게 하여 현재를 더욱 가치 있게 살아가게 만드는 거울과 같다고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.87496e-05
+        },
+        {
+          "text": "죽음은 삶이라는 긴 여정을 마무리하며 생의 모든 순간에 의미를 부여하고, 완전한 휴식과 소멸을 통해 다시 자연의 거대한 흐름으로 회귀하는 자연스러운 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.82447e-05
+        },
+        {
+          "text": "죽음은 생명의 자연스러운 마무리이자, 삶이라는 긴 여정의 마침표이며 동시에 존재가 무(無)로 돌아가거나 새로운 형태로 전환되는 미지의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.57202e-05
+        },
+        {
+          "text": "죽음은 생명의 필연적인 완결이자, 삶이라는 유한한 시간을 더욱 가치 있고 밀도 있게 만들어주는 거울과 같은 존재라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음이란 삶이라는 찬란한 이야기의 마침표이자, 새로운 무(無) 혹은 다음 단계로 이어지는 필연적인 통과제의라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.26908e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 여정에 마침표를 찍음으로써 역설적으로 살아있는 모든 순간을 더없이 소중하고 의미 있게 만드는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.47104e-05
+        },
+        {
+          "text": "죽음은 삶이라는 이야기의 완성물이며, 유한함을 통해 현재의 순간을 가장 가치 있게 만드는 거울이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 1.96614e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간을 통해 존재의 의미를 완성하며, 새로운 형태의 고요함이나 다음 단계로 나아가는 자연스러운 마침표라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.42055e-05
+        },
+        {
+          "text": "죽음은 삶의 필수적인 완성이며, 유한함이 있기에 지금 이 순간의 삶이 더욱 소중해지는 거울과 같은 존재라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.31957e-05
+        },
+        {
+          "text": "죽음은 삶이라는 유한한 시간 속에서 우리가 마침내 마주하게 되는 가장 자연스러운 마침표이자, 역설적으로 현재의 삶을 더욱 가치 있고 의미 있게 만들어주는 완성의 과정이라고 생각합니다.",
+          "error": null,
+          "finish": "stop",
+          "provider": "DeepInfra",
+          "cost": 2.92545e-05
+        }
+      ],
+      "n": 10,
+      "unique": 10,
+      "non_modal": null,
+      "word_dist": 0.865737160654537,
+      "char_dist": 0.8137431192061113,
+      "foreign": 2,
+      "avg_len": 79.4,
+      "errors": 0
+    }
+  ],
+  "cost": 0.0023246189999999974,
+  "providers": {
+    "DeepInfra": 100
+  }
+}
