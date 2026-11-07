@@ -1,0 +1,28 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "palmweb/web",
+        "run",
+        "dev"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "server",
+      "runtimeExecutable": "palmweb/.venv/bin/uvicorn",
+      "runtimeArgs": [
+        "server.main:app",
+        "--port",
+        "8011",
+        "--app-dir",
+        "palmweb"
+      ],
+      "port": 8011
+    }
+  ]
+}

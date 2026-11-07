@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHART</title>
+</head>
+<body>
+  <main id="dash">
+    <header class="top">
+      <h1>CHART</h1>
+      <div class="stats">
+        <span class="stat"><b id="count">0</b><span>손금</span></span>
+        <span class="stat"><b id="count-cap">0</b><span>캡차</span></span>
+      </div>
+      <div class="tools">
+        <span id="conn" class="conn" title="서버 연결">●</span>
+        <button id="sound" class="btn sound" type="button" aria-pressed="true" title="새 기록이 오면 띠링">🔔 소리</button>
+        <button id="reset" class="btn" type="button">초기화</button>
+        <span id="reset-confirm" class="confirm" hidden>
+          <span><b id="reset-n">0</b>건을 보관함으로 옮깁니다</span>
+          <button id="reset-yes" class="btn danger" type="button">비우기</button>
+          <button id="reset-no" class="btn" type="button">취소</button>
+        </span>
+      </div>
+    </header>
+
+    <section class="mid">
+      <!-- 손금: 멈춘 순간의 손(정사각형 검은 틀) + 이름·단계 / 아래 최근 기록 띠. 캡차 패널과 같은 틀·같은 자리 -->
+      <section class="pane palm" id="palm">
+        <div class="detail" id="detail">
+          <figure class="frame" id="d-frame"><img id="d-img" alt="멈춘 순간의 손"></figure>
+          <div class="side">
+            <h2 class="nick" id="d-nick">—</h2>
+            <div class="d-step"><b id="d-step">—</b><span>단계</span></div>
+          </div>
+        </div>
+        <ol class="strip" id="cards"></ol>
+        <p id="empty" class="empty">아직 기록이 없습니다</p>
+      </section>
+
+      <!-- 캡차: 고른 손들을 합친 그림(정사각형) + 이름 / 아래 최근 그림 띠 -->
+      <section class="pane cap" id="cap">
+        <div class="detail" id="c-detail">
+          <figure class="frame" id="c-frame"><img id="c-img" alt="고른 손들을 합친 그림"></figure>
+          <div class="side">
+            <h2 class="nick" id="c-nick">—</h2>
+          </div>
+        </div>
+        <ol class="strip" id="cap-cards"></ol>
+        <p id="cap-empty" class="empty">아직 응답이 없습니다</p>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="/src/dashboard.ts"></script>
+</body>
+</html>

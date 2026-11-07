@@ -25,3 +25,17 @@ palmlines/tests/testset/
 Transcript *.md
 오후회의록.md
 !.env.example
+
+# 웹
+palmweb/web/node_modules/
+palmweb/web/dist/
+palmweb/logs/
+palmweb/knob/dist/
+palmweb/web/public/mediapipe-wasm/
+.google-sa.json
+
+# 전시 기록 백업(참가자 닉네임·손 스냅샷)과 영수증은 저장소에 넣지 않는다
+palmweb/archive/
+영수증/
+palmweb/web/public/live/
+.DS_Store

@@ -37,6 +37,7 @@ class PalmLineSet:
     source: str = "classical"
     captured_at: float = field(default_factory=time.time)
     outline: np.ndarray | None = None   # (N, 2) 표준 좌표 손 윤곽. 렌더·선 확장의 경계로 쓴다
+    mirrored: bool = False              # 정면화 때 좌우를 뒤집었는가 (입력 화면에서 엄지가 오른쪽이었음)
 
     def by_kind(self, kind: str) -> list[Polyline]:
         return [l for l in self.lines if l.kind == kind]
@@ -48,6 +49,7 @@ def to_json(ls: PalmLineSet) -> dict:
         "handedness": ls.handedness,
         "source": ls.source,
         "captured_at": ls.captured_at,
+        "mirrored": bool(ls.mirrored),
         "landmarks": ls.landmarks.astype(float).round(5).tolist(),
         "outline": None if ls.outline is None else ls.outline.astype(float).round(5).tolist(),
         "lines": [
@@ -65,4 +67,5 @@ def from_json(d: dict) -> PalmLineSet:
         handedness=d["handedness"], landmarks=np.asarray(d["landmarks"], np.float32),
         roi_image=None, source=d.get("source", "classical"), captured_at=d.get("captured_at", 0.0),
         outline=None if d.get("outline") is None else np.asarray(d["outline"], np.float32),
+        mirrored=bool(d.get("mirrored", False)),
     )

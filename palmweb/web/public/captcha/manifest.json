@@ -1,0 +1,202 @@
+{
+ "model": "openai/gpt-image-2.6-sunburst",
+ "question": "매력을 느끼는 '손'을 선택하세요",
+ "round": [
+  "hand-01.png",
+  "hand-03.png",
+  "hand-05.png",
+  "hand-06.png",
+  "hand-12.png",
+  "other-01.png",
+  "other-03.png",
+  "other-06.png",
+  "other-10.png"
+ ],
+ "merge": {
+  "dir": "merge",
+  "key": "round 순서대로 고른 칸 1, 아닌 칸 0 (9자리) → merge/<mask>.jpg",
+  "model": "bytedance-seed/seedream-5-0-flash"
+ },
+ "items": [
+  {
+   "file": "hand-01.png",
+   "group": "hand",
+   "label": "손바닥을 편 손",
+   "prompt": "An open adult human right hand, palm facing the camera, fingers relaxed and slightly spread, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-02.png",
+   "group": "hand",
+   "label": "주먹",
+   "prompt": "A clenched adult human fist seen from the front, knuckles toward the camera, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-03.png",
+   "group": "hand",
+   "label": "노인의 손",
+   "prompt": "An elderly person's open hand, palm facing the camera, deep wrinkles, prominent veins and age spots, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-04.png",
+   "group": "hand",
+   "label": "손등",
+   "prompt": "The back of an adult human hand, fingers together and slightly curved, knuckles and tendons visible, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-05.png",
+   "group": "hand",
+   "label": "아이의 손",
+   "prompt": "A young child's small open hand, palm facing the camera, soft chubby fingers, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-06.png",
+   "group": "hand",
+   "label": "어두운 피부의 손",
+   "prompt": "An open hand with dark brown skin, palm facing the camera, fingers gently spread, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-07.png",
+   "group": "hand",
+   "label": "손가락 하나",
+   "prompt": "An adult human hand pointing upward with the index finger, other fingers folded, seen from the front."
+  },
+  {
+   "file": "hand-08.png",
+   "group": "hand",
+   "label": "브이",
+   "prompt": "An adult human hand making a V sign with index and middle finger, palm toward the camera."
+  },
+  {
+   "file": "hand-09.png",
+   "group": "hand",
+   "label": "오케이",
+   "prompt": "An adult human hand making an OK sign, thumb and index finger forming a circle, other fingers raised."
+  },
+  {
+   "file": "hand-10.png",
+   "group": "hand",
+   "label": "반쯤 쥔 손",
+   "prompt": "An adult human hand half closed, fingers loosely curled as if about to hold something, seen from the front."
+  },
+  {
+   "file": "hand-11.png",
+   "group": "hand",
+   "label": "젖은 손",
+   "prompt": "An open adult human hand, palm facing the camera, skin wet with water droplets, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-12.png",
+   "group": "hand",
+   "label": "반지 낀 손",
+   "prompt": "An open adult human hand, palm facing the camera, a plain silver ring on the ring finger, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-13.png",
+   "group": "hand",
+   "label": "손가락 벌린 손",
+   "prompt": "An open adult human hand with fingers spread as wide as possible, palm facing the camera, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-14.png",
+   "group": "hand",
+   "label": "옆에서 본 손",
+   "prompt": "An open adult human hand seen from the side, thumb toward the camera, fingers extended, wrist at the bottom edge."
+  },
+  {
+   "file": "hand-15.png",
+   "group": "hand",
+   "label": "두 손을 모은 모양",
+   "prompt": "Two adult human hands pressed together palm to palm in a prayer gesture, fingers pointing up, seen from the front."
+  },
+  {
+   "file": "other-01.png",
+   "group": "other",
+   "label": "핏줄이 덮은 손",
+   "prompt": "An open human hand, palm facing the camera, but the skin is almost entirely covered by a dense web of dark red veins and thin root-like vessels branching out from the palm lines across the fingers, slightly translucent skin, unsettling medical look."
+  },
+  {
+   "file": "other-02.png",
+   "group": "other",
+   "label": "손가락 여섯 개",
+   "prompt": "An open human hand, palm facing the camera, that has exactly six fingers: five fingers plus one extra finger between the ring finger and the little finger, all realistic skin, otherwise ordinary."
+  },
+  {
+   "file": "other-03.png",
+   "group": "other",
+   "label": "X선 손",
+   "prompt": "A medical X-ray radiograph of a human hand, palm flat, bones glowing white against black, soft grey outline of flesh visible."
+  },
+  {
+   "file": "other-04.png",
+   "group": "other",
+   "label": "마네킹 손",
+   "prompt": "A glossy white plastic mannequin hand, open, palm facing the camera, visible seam lines at the joints, wrist at the bottom edge."
+  },
+  {
+   "file": "other-05.png",
+   "group": "other",
+   "label": "로봇 손",
+   "prompt": "A robotic humanoid hand made of brushed metal and black joints, open, palm facing the camera, wrist at the bottom edge."
+  },
+  {
+   "file": "other-06.png",
+   "group": "other",
+   "label": "유리 손",
+   "prompt": "A sculpture of an open hand made of clear glass, palm facing the camera, light refracting through it, wrist at the bottom edge."
+  },
+  {
+   "file": "other-07.png",
+   "group": "other",
+   "label": "석고상 손",
+   "prompt": "An open hand carved in white marble, a fragment of a classical statue, palm facing the camera, slightly chipped, standing on a cut wrist."
+  },
+  {
+   "file": "other-08.png",
+   "group": "other",
+   "label": "손가락이 너무 긴 손",
+   "prompt": "An open human hand, palm facing the camera, with fingers that are unnaturally long, each finger twice the normal length, realistic skin, wrist at the bottom edge."
+  },
+  {
+   "file": "other-09.png",
+   "group": "other",
+   "label": "다섯 갈래 나뭇가지",
+   "prompt": "A dry bare tree branch that splits into five finger-like twigs so that it resembles an open hand, bark texture, held upright."
+  },
+  {
+   "file": "other-10.png",
+   "group": "other",
+   "label": "불가사리",
+   "prompt": "A single beige starfish standing upright on the tips of its five arms so that its silhouette resembles a spread hand, seen from the front."
+  },
+  {
+   "file": "other-11.png",
+   "group": "other",
+   "label": "손 그림자",
+   "prompt": "Only the shadow of an open hand cast on a very dark charcoal wall lit by one dim spotlight, the shadow a deeper black, the hand itself outside the frame and not visible, the wall fading into pure black at the edges so the frame matches a black background."
+  },
+  {
+   "file": "other-12.png",
+   "group": "other",
+   "label": "빈 장갑",
+   "prompt": "An empty beige latex glove standing upright and inflated as if a hand were inside, fingers spread, but clearly hollow, wrist at the bottom edge."
+  },
+  {
+   "file": "other-13.png",
+   "group": "other",
+   "label": "인삼 뿌리",
+   "prompt": "A ginseng root with five thick forked rootlets spread like fingers so that it resembles a hand, pale tan color, held upright."
+  },
+  {
+   "file": "other-14.png",
+   "group": "other",
+   "label": "산호",
+   "prompt": "A piece of pale pink finger coral with five thick branches rising from a base so that it resembles an open hand, seen from the front."
+  },
+  {
+   "file": "other-15.png",
+   "group": "other",
+   "label": "손 모양 잎",
+   "prompt": "A single large green horse chestnut leaf with five leaflets spread like fingers, stem at the bottom edge, resembling an open hand."
+  }
+ ]
+}

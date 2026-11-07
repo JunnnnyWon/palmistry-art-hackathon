@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>손금 노브</title>
+<!--
+  손금 체험의 해석 단계(1~10) 노브. 라즈베리파이 7인치 터치스크린(800x480)용.
+  검정 배경 위 밝은 대비색의 입체 노브 하나만 그린다. 글자·숫자는 없다.
+
+  단계별 반응 (REACT 표)
+    1~3  고요함. 넘어갈 때 딸깍 눌림만
+    4~6  노브 뒤 빛이 숨 쉬듯 퍼졌다 줄어듦
+    7    가끔 미세하게 떨림
+    8    떨림이 잦아지고 LED가 깜빡임
+    9    노브가 흔들리고 표면에 균열이 비침
+    10   강하게 요동, 붉은 빛이 맥박처럼, 균열이 완전히 드러남
+
+  상태: 손금을 찍기 전이거나 서버 연결이 끊기면 노브 전체가 어두워진다. 연결이 끊겼을 때만 왼쪽 위에 작은 빨간 점.
+  서버 주소 바꾸기: 왼쪽 위 구석을 2초 길게 누르기, 또는 ?server=10.10.100.41:8000 (https 서버면 https://주소)
+  방: 주소가 /n1 이면 r1 방(/r1 전시 화면)을 조종한다. ?room=이름 도 된다. 둘 다 없으면 전시장(exhibit) 방.
+      페이지가 https 로 열리면 wss 로, http 면 ws 로 같은 서버에 붙는다.
+  점검용: ?noanim=1 (회전 애니메이션 없이 바로), ?demo=7 (서버 없이 7단계 체험 중으로 표시)
+
+  Tizen 6.0 웹 엔진(옛 Chromium)에서도 돌도록 최신 JS 문법(?. ?? 클래스 필드)과
+  최신 CSS(min(), aspect-ratio, inset, flex gap)를 쓰지 않는다.
+  라즈베리파이 성능을 위해 SVG 흐림 필터 대신 미리 그린 그라디언트의 투명도·위치만 바꾼다.
+-->
+<style>
+  html, body { margin:0; height:100%; background:#000; overflow:hidden; touch-action:none; }
+  * { -webkit-user-select:none; user-select:none; -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none; box-sizing:border-box; }
+  #stage { position:absolute; top:0; right:0; bottom:0; left:0; display:flex; align-items:center; justify-content:center; }
+  #dial { display:block; touch-action:none; overflow:visible; }
+  #offline { position:absolute; top:12px; left:12px; width:8px; height:8px; border-radius:50%; background:#c0392b; display:none; }
+  #corner { position:absolute; top:0; left:0; width:90px; height:90px; }
+  #settings { position:absolute; top:0; right:0; bottom:0; left:0; background:rgba(0,0,0,.88); display:none;
+    align-items:center; justify-content:center; flex-direction:column; color:#ece9e4;
+    font-family:-apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans CJK KR", sans-serif; }
+  #settings.open { display:flex; }
+  #settings > * { margin:7px 0; }
+  #settings input { font-size:26px; padding:10px 14px; width:420px; border-radius:8px; border:1px solid #555;
+    background:#141414; color:#ece9e4; -webkit-user-select:text; user-select:text; }
+  #settings button { font-size:22px; padding:10px 22px; border-radius:8px; border:1px solid #555; background:#1e1e1e; color:#ece9e4; }
+  #settings .row button + button { margin-left:12px; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="dial" viewBox="0 0 480 480" aria-label="해석 단계 노브">
+  <defs>
+    <!-- 바닥판: 아래로 갈수록 어두운 금속 -->
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d1d1d"/><stop offset="1" stop-color="#060606"/>
+    </linearGradient>
+    <linearGradient id="plateRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <!-- 노브 뒤 빛 (색은 단계마다 바꾼다) -->
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop id="glow0" offset="0.55" stop-color="#8ce678" stop-opacity="0.55"/>
+      <stop id="glow1" offset="1" stop-color="#8ce678" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 노브가 바닥에 드리우는 그림자 -->
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.6" stop-color="#000" stop-opacity="0.9"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 노브 옆면(치마): 위는 밝고 아래는 어둡다 -->
+    <linearGradient id="skirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf8f2"/><stop offset="0.55" stop-color="#cfc8bc"/><stop offset="1" stop-color="#7d776e"/>
+    </linearGradient>
+    <!-- 노브 윗면: 왼쪽 위 조명을 받은 돔 -->
+    <radialGradient id="cap" cx="0.36" cy="0.3" r="0.78">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#ebe6dd"/><stop offset="1" stop-color="#a59f95"/>
+    </radialGradient>
+    <!-- 윗면 테두리의 가는 경사면 -->
+    <linearGradient id="bevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#8f897f"/>
+    </linearGradient>
+    <!-- 고정된 반사광 (노브가 돌아도 빛은 그대로) -->
+    <radialGradient id="spec" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- LED: 켜졌을 때 가운데가 밝은 유리 -->
+    <radialGradient id="ledOff" cx="0.4" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#0d0d0d"/>
+    </radialGradient>
+  </defs>
+  <g id="all"></g>
+</svg>
+</div>
+<div id="offline"></div>
+<div id="corner"></div>
+<div id="settings">
+  <div style="font-size:20px">서버 주소 (맥 IP:포트)</div>
+  <input id="server-input" inputmode="url" autocomplete="off">
+  <div class="row"><button id="save">저장</button><button id="cancel">취소</button></div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var DEFAULT_SERVER = "__DEFAULT_SERVER__";   // build_knob_wgt.py 가 바꿔 넣는다
+  var KEY = "palmknob.server";
+  var STEPS = 10;
+  // 단계 색: 1~6 해석이 유지되는 구간(초록~노랑), 7~10 말이 흔들리고 무너지는 구간(주황~빨강)
+  var COLOR = ["#7dff6a", "#8cf86a", "#a6f066", "#c4e862", "#e0dc5c", "#f5cd52", "#ffb43c", "#ff8a2e", "#ff5a2a", "#ff2440"];
+  // 단계별 반응 세기
+  //   breathe: 뒤 빛이 숨 쉬는 세기, tremor: 회전 떨림(도), shake: 흔들림(px), freq: 떨림이 일어나는 빈도(초당),
+  //   flicker: LED 깜빡임 확률, crack: 균열 투명도, pulse: 붉은 맥박 세기
+  var REACT = [
+    { breathe: 0,    tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0,    tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.08, tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.25, tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.4,  tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.55, tremor: 0,   shake: 0,   freq: 0,   flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.6,  tremor: 1.2, shake: 0,   freq: 0.5, flicker: 0,    crack: 0,    pulse: 0 },
+    { breathe: 0.65, tremor: 2.5, shake: 1,   freq: 1.6, flicker: 0.04, crack: 0.12, pulse: 0 },
+    { breathe: 0.7,  tremor: 5,   shake: 3,   freq: 4,   flicker: 0.10, crack: 0.55, pulse: 0.4 },
+    { breathe: 0.8,  tremor: 9,   shake: 6,   freq: 9,   flicker: 0.22, crack: 1,    pulse: 1 }
+  ];
+  var A0 = -135, A1 = 135;               // 12시 = 0도, 시계 방향 +. 아래쪽 90도는 비워 둔다
+  var C = 240;                           // viewBox 중심
+  var R_LED = 214, R_PLATE = 196, R_SKIRT = 158, R_CAP = 126;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var dial = $("dial"), all = $("all");
+  var state = { step: 1, phase: "waiting", ready: [] };
+  var ws = null, connected = false, dragging = false, retry = 0, lastSent = 0;
+  var shownAngle = A0, targetAngle = A0, shownStep = 1;
+
+  // ---------- 서버 주소 ----------
+  function query(name) {
+    var m = new RegExp("[?&]" + name + "=([^&]+)").exec(location.search);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  // 서버 주소: "호스트:포트" 또는 "wss://호스트" (https 서버). 반환은 접속할 WebSocket 주소의 앞부분
+  function serverAddr() {
+    var q = query("server");
+    if (q) { save(KEY, q); return q; }
+    var saved = load(KEY);
+    if (saved) return saved;
+    if (location.protocol.indexOf("http") === 0) return location.host;   // 서버의 /knob, /n1 로 연 경우
+    return DEFAULT_SERVER.indexOf("__") === 0 ? "10.10.100.41:8000" : DEFAULT_SERVER;
+  }
+  function wsBase() {
+    var a = serverAddr();
+    if (/^wss?:\/\//.test(a)) return a.replace(/\/+$/, "");
+    if (/^https:\/\//.test(a)) return "wss://" + a.slice(8).replace(/\/+$/, "");
+    if (/^http:\/\//.test(a)) return "ws://" + a.slice(7).replace(/\/+$/, "");
+    // 주소만 있으면: 페이지가 https 로 열렸을 때만 wss (Tizen 앱·http 페이지는 ws)
+    return (location.protocol === "https:" && a === location.host ? "wss://" : "ws://") + a;
+  }
+  // 방: /n1 → r1 (전시 화면 /r1 과 짝), 또는 ?room=이름. 없으면 서버가 전시장(exhibit) 방으로 붙인다
+  function roomName() {
+    var q = query("room");
+    if (!q) { var m = /\/n(\d+)\/?$/.exec(location.pathname); if (m) q = "r" + m[1]; }
+    return q ? q.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40) : "";
+  }
+
+  // ---------- 그리기 도구 ----------
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    (parent || all).appendChild(e);
+    return e;
+  }
+  function angleOf(k) { return A0 + (k - 1) * (A1 - A0) / (STEPS - 1); }
+  function pt(a, r) { var t = (a - 90) * Math.PI / 180; return [C + r * Math.cos(t), C + r * Math.sin(t)]; }
+  function arc(a0, a1, r) {
+    var p0 = pt(a0, r), p1 = pt(a1, r), large = (a1 - a0) > 180 ? 1 : 0;
+    return "M" + p0[0] + " " + p0[1] + " A" + r + " " + r + " 0 " + large + " 1 " + p1[0] + " " + p1[1];
+  }
+  // 늘 같은 균열 모양이 나오도록 고정 씨앗 난수
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+
+  // ---------- 장면 ----------
+  // 바닥판과 LED 홈
+  el("circle", { cx: C, cy: C, r: R_PLATE + 30, fill: "url(#plateRim)" });
+  el("circle", { cx: C, cy: C, r: R_PLATE + 27, fill: "url(#plate)" });
+  el("path", { d: arc(A0, A1, R_LED), fill: "none", stroke: "#050505", "stroke-width": 26, "stroke-linecap": "round" });
+  el("path", { d: arc(A0, A1, R_LED), fill: "none", stroke: "#151515", "stroke-width": 20, "stroke-linecap": "round" });
+
+  // LED 10개: 꺼진 유리 + 켜진 빛(위에 겹쳐 투명도로 켬)
+  var leds = [], ledHalos = [];
+  for (var k = 1; k <= STEPS; k++) {
+    var p = pt(angleOf(k), R_LED);
+    var halo = el("circle", { cx: p[0], cy: p[1], r: 19, fill: COLOR[k - 1], opacity: 0 });
+    el("circle", { cx: p[0], cy: p[1], r: 8.5, fill: "url(#ledOff)", stroke: "#000", "stroke-width": 1.5 });
+    var lit = el("circle", { cx: p[0], cy: p[1], r: 7, fill: COLOR[k - 1], opacity: 0 });
+    var hot = el("circle", { cx: p[0] - 2, cy: p[1] - 2, r: 2.6, fill: "#fff", opacity: 0 });
+    ledHalos.push(halo); leds.push({ lit: lit, hot: hot });
+  }
+
+  // 흔들림은 이 묶음 전체가 받는다 (빛·그림자·노브)
+  var shakeG = el("g", {});
+  var glow = el("circle", { cx: C, cy: C, r: 205, fill: "url(#glow)", opacity: 0 }, shakeG);
+  el("ellipse", { cx: C + 8, cy: C + 18, rx: R_SKIRT + 14, ry: R_SKIRT + 10, fill: "url(#shadow)" }, shakeG);
+
+  // 노브: 옆면 → 널링(돌아감) → 윗면 경사 → 윗면 → 균열·지시선(돌아감) → 고정 반사광
+  var pressG = el("g", {}, shakeG);
+  el("circle", { cx: C, cy: C, r: R_SKIRT, fill: "url(#skirt)" }, pressG);
+  var spinOuter = el("g", {}, pressG);
+  for (var i = 0; i < 72; i++) {
+    var a = i * 5, q0 = pt(a, R_CAP + 9), q1 = pt(a, R_SKIRT - 2);
+    el("line", { x1: q0[0], y1: q0[1], x2: q1[0], y2: q1[1], stroke: i % 2 ? "rgba(0,0,0,.22)" : "rgba(255,255,255,.35)", "stroke-width": 2.2 }, spinOuter);
+  }
+  el("circle", { cx: C, cy: C, r: R_SKIRT, fill: "none", stroke: "rgba(0,0,0,.35)", "stroke-width": 2 }, pressG);
+  el("circle", { cx: C, cy: C, r: R_CAP + 7, fill: "url(#bevel)" }, pressG);
+  el("circle", { cx: C, cy: C, r: R_CAP, fill: "url(#cap)" }, pressG);
+  // 가공 자국: 아주 옅은 동심원
+  for (var rr = 18; rr < R_CAP; rr += 9) el("circle", { cx: C, cy: C, r: rr, fill: "none", stroke: "rgba(0,0,0,.035)", "stroke-width": 1 }, pressG);
+
+  var spinInner = el("g", {}, pressG);
+  // 균열: 가운데 근처에서 바깥으로 갈라지는 선들 (9~10단계에서 드러남)
+  var cracks = el("g", { opacity: 0 }, spinInner);
+  for (var c = 0; c < 7; c++) {
+    var ang = rnd() * 360, len = 60 + rnd() * 70, x = C + Math.cos(ang) * 14, y = C + Math.sin(ang) * 14;
+    var d = "M" + x.toFixed(1) + " " + y.toFixed(1), dir = ang * Math.PI / 180;
+    for (var s = 0; s < 6; s++) {
+      dir += (rnd() - 0.5) * 0.9;
+      x += Math.cos(dir) * len / 6; y += Math.sin(dir) * len / 6;
+      d += " L" + x.toFixed(1) + " " + y.toFixed(1);
+    }
+    el("path", { d: d, fill: "none", stroke: "rgba(255,255,255,.6)", "stroke-width": 2.6, "stroke-linejoin": "round", transform: "translate(0.8 1)" }, cracks);
+    el("path", { d: d, fill: "none", stroke: "#3a0b0b", "stroke-width": 1.6, "stroke-linejoin": "round" }, cracks);
+  }
+  // 지시선: 파인 홈(어두운 선 + 아래쪽 밝은 테) 안에 단계 색 빛
+  var g0 = pt(0, 34), g1 = pt(0, R_CAP - 16);
+  el("line", { x1: g0[0] + 1, y1: g0[1] + 1.5, x2: g1[0] + 1, y2: g1[1] + 1.5, stroke: "rgba(255,255,255,.9)", "stroke-width": 15, "stroke-linecap": "round" }, spinInner);
+  el("line", { x1: g0[0], y1: g0[1], x2: g1[0], y2: g1[1], stroke: "#4a4640", "stroke-width": 14, "stroke-linecap": "round" }, spinInner);
+  var notch = el("line", { x1: g0[0], y1: g0[1] + 4, x2: g1[0], y2: g1[1] + 2, stroke: COLOR[0], "stroke-width": 7, "stroke-linecap": "round" }, spinInner);
+
+  // 고정 반사광 (돌지 않는다)
+  el("ellipse", { cx: C - 40, cy: C - 52, rx: 54, ry: 30, fill: "url(#spec)", transform: "rotate(-28 " + (C - 40) + " " + (C - 52) + ")" }, pressG);
+  el("ellipse", { cx: C - 70, cy: C - 112, rx: 40, ry: 9, fill: "url(#spec)", opacity: 0.55, transform: "rotate(-36 " + (C - 70) + " " + (C - 112) + ")" }, pressG);
+
+  // ---------- 상태 → 화면 ----------
+  var dimNow = 1, dimTarget = 1, lastFrame = 0;   // 노브 전체 밝기 (상태에 따라 어두워짐, 0.5초에 걸쳐)
+  var pressUntil = 0, kickUntil = 0, kickAmp = 0, tremorPhase = 0, nextTremor = 0, tremorUntil = 0, tremorAmp = 0;
+  var t0 = now();
+  function now() { return (window.performance && performance.now) ? performance.now() : Date.now(); }
+
+  function setColors() {
+    var col = COLOR[shownStep - 1];
+    notch.setAttribute("stroke", col);
+    $("glow0").setAttribute("stop-color", col);
+    $("glow1").setAttribute("stop-color", col);
+  }
+
+  var TURN_MS = query("noanim") ? 0 : 230, fromAngle = A0, turnStart = 0;   // ?noanim=1: 점검용, 회전 없이 바로
+  function setShown(step) {
+    var prev = shownStep;
+    shownStep = Math.max(1, Math.min(STEPS, step));
+    var t = angleOf(shownStep);
+    if (t !== targetAngle) { fromAngle = shownAngle; targetAngle = t; turnStart = now(); }
+    if (shownStep !== prev) {
+      // 넘어갈 때의 반응: 낮은 단계는 딸깍 눌림, 높은 단계는 튕기듯 크게
+      pressUntil = now() + 110;
+      kickAmp = shownStep >= 7 ? REACT[shownStep - 1].tremor * 1.6 + 2 : 0;
+      kickUntil = now() + 380;
+      setColors();
+    }
+  }
+
+  function frame() {
+    var tn = now(), t = (tn - t0) / 1000, R = REACT[shownStep - 1], active = connected && state.phase === "result";
+    // 1) 회전: 목표 각도로 시간 기준 보간 (화면 갱신이 느려도 제때 도착)
+    if (shownAngle !== targetAngle) {
+      var k = TURN_MS ? Math.min(1, (tn - turnStart) / TURN_MS) : 1;
+      shownAngle = k >= 1 ? targetAngle : fromAngle + (targetAngle - fromAngle) * (1 - Math.pow(1 - k, 3));
+    }
+    // 2) 떨림: 단계 빈도에 따라 짧은 떨림이 불규칙하게 일어난다
+    var jitter = 0;
+    if (active && R.freq > 0) {
+      if (tn > nextTremor) {
+        tremorUntil = tn + 120 + Math.random() * 260;
+        tremorAmp = R.tremor * (0.5 + Math.random() * 0.8);
+        nextTremor = tn + (1000 / R.freq) * (0.4 + Math.random() * 1.2);
+      }
+      if (tn < tremorUntil) jitter = Math.sin(tn / 18) * tremorAmp * (0.6 + 0.4 * Math.sin(tn / 7));
+    }
+    // 넘어갈 때 튕김 (높은 단계)
+    if (tn < kickUntil) jitter += Math.sin((kickUntil - tn) / 26) * kickAmp * ((kickUntil - tn) / 380);
+    var a = shownAngle + jitter;
+    spinOuter.setAttribute("transform", "rotate(" + a + " " + C + " " + C + ")");
+    spinInner.setAttribute("transform", "rotate(" + a + " " + C + " " + C + ")");
+
+    // 3) 흔들림 (9~10단계)
+    var sx = 0, sy = 0;
+    if (active && R.shake > 0 && tn < tremorUntil + 120) {
+      sx = (Math.random() - 0.5) * 2 * R.shake; sy = (Math.random() - 0.5) * 2 * R.shake;
+    }
+    // 눌림: 손가락을 대고 있거나 넘어간 직후 살짝 작아진다
+    var sc = (dragging || tn < pressUntil) ? 0.985 : 1;
+    shakeG.setAttribute("transform", "translate(" + sx.toFixed(2) + " " + sy.toFixed(2) + ")");
+    pressG.setAttribute("transform", "translate(" + C + " " + C + ") scale(" + sc + ") translate(" + (-C) + " " + (-C) + ")");
+
+    // 4) 뒤 빛: 4~6단계는 숨 쉬듯, 10단계는 맥박처럼
+    var breath = R.breathe * (0.55 + 0.45 * Math.sin(t * 1.6));
+    var beat = R.pulse ? R.pulse * Math.pow(Math.max(0, Math.sin(t * 5.2)), 6) : 0;
+    glow.setAttribute("opacity", active ? Math.min(1, breath + beat).toFixed(3) : "0");
+    glow.setAttribute("r", (205 + beat * 18).toFixed(1));
+
+    // 5) 균열
+    cracks.setAttribute("opacity", active ? (R.crack * (0.85 + 0.15 * Math.sin(t * 9))).toFixed(3) : "0");
+
+    // 6) LED: 현재 단계까지 켜짐, 해석 글이 도착한 단계는 꺼져 있어도 희미하게, 높은 단계는 깜빡임
+    for (var i = 0; i < STEPS; i++) {
+      var on = i + 1 <= shownStep, ready = state.ready.indexOf(i + 1) >= 0, lv = on ? 1 : (ready ? 0.16 : 0);
+      if (on && active && R.flicker > 0 && Math.random() < R.flicker) lv = 0.15 + Math.random() * 0.4;
+      leds[i].lit.setAttribute("opacity", lv.toFixed(2));
+      leds[i].hot.setAttribute("opacity", on ? (lv * 0.9).toFixed(2) : "0");
+      ledHalos[i].setAttribute("opacity", on ? (lv * (i + 1 === shownStep ? 0.42 : 0.2)).toFixed(2) : "0");
+    }
+    // 7) 전체 밝기: 손금 촬영 전·연결 끊김이면 어둡게 (CSS 전환 대신 직접 보간: 옛 웹 엔진 대비)
+    var dt = lastFrame ? Math.min(100, tn - lastFrame) : 16;
+    lastFrame = tn;
+    if (dimNow !== dimTarget) {
+      var stepDim = dt / 500;
+      dimNow = Math.abs(dimTarget - dimNow) <= stepDim ? dimTarget : dimNow + (dimTarget > dimNow ? stepDim : -stepDim);
+      all.setAttribute("opacity", dimNow.toFixed(3));
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var firstStatus = true;
+  function renderStatus() {
+    var on = connected && state.phase === "result";
+    dimTarget = on ? 1 : (connected ? 0.38 : 0.2);
+    if (firstStatus) {   // 앱을 켠 순간에는 바로 맞는 밝기로, 이후 변화만 서서히
+      firstStatus = false;
+      dimNow = dimTarget;
+      all.setAttribute("opacity", String(dimNow));
+    }
+    $("offline").style.display = connected ? "none" : "block";
+  }
+
+  // ---------- 서버 연결 ----------
+  function connect() {
+    var room = roomName();
+    try { ws = new WebSocket(wsBase() + "/ws/control" + (room ? "?room=" + encodeURIComponent(room) : "")); }
+    catch (e) { scheduleRetry(); return; }
+    ws.onopen = function () { connected = true; retry = 0; renderStatus(); };
+    ws.onmessage = function (ev) {
+      var m = JSON.parse(ev.data);
+      if (m.type !== "step") return;
+      state = m;
+      if (!dragging || m.source === "rejected") setShown(m.step);
+      renderStatus();
+    };
+    ws.onclose = function () { connected = false; renderStatus(); scheduleRetry(); };
+    ws.onerror = function () { try { ws.close(); } catch (e) {} };
+  }
+  function scheduleRetry() { setTimeout(connect, Math.min(1000 * Math.pow(2, retry++), 5000)); }
+  function send(obj) { if (ws && ws.readyState === 1) ws.send(JSON.stringify(obj)); }
+  function requestStep(k) {
+    k = Math.max(1, Math.min(STEPS, k));
+    if (!connected || state.phase !== "result") return;
+    setShown(k);
+    if (k !== lastSent) { lastSent = k; send({ type: "set_step", step: k }); }
+  }
+
+  // ---------- 터치: 화면 어디서든 노브 중심 기준 각도로 ----------
+  function stepFromPointer(ev) {
+    var r = dial.getBoundingClientRect();
+    var x = ev.clientX - (r.left + r.width / 2), y = ev.clientY - (r.top + r.height / 2);
+    var a = Math.atan2(x, -y) * 180 / Math.PI;
+    if (a > A1) a = A1;    // 아래쪽 빈 구간: 오른쪽 아래는 10, 왼쪽 아래는 1
+    if (a < A0) a = A0;
+    return Math.round((a - A0) / ((A1 - A0) / (STEPS - 1))) + 1;
+  }
+  var stage = $("stage");
+  stage.addEventListener("pointerdown", function (ev) {
+    if (!connected || state.phase !== "result") return;
+    dragging = true; lastSent = state.step;
+    try { stage.setPointerCapture(ev.pointerId); } catch (e) {}
+    requestStep(stepFromPointer(ev));
+  });
+  stage.addEventListener("pointermove", function (ev) { if (dragging) requestStep(stepFromPointer(ev)); });
+  function endDrag() { if (dragging) { dragging = false; setShown(state.step); } }
+  stage.addEventListener("pointerup", endDrag);
+  stage.addEventListener("pointercancel", endDrag);
+  document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  document.addEventListener("keydown", function (e) {   // 키보드가 붙어 있으면 방향키도 된다
+    if (e.key === "ArrowRight" || e.key === "ArrowUp") { lastSent = state.step; requestStep(state.step + 1); }
+    if (e.key === "ArrowLeft" || e.key === "ArrowDown") { lastSent = state.step; requestStep(state.step - 1); }
+  });
+
+  // ---------- 서버 주소 설정 (왼쪽 위 구석 2초 길게 누르기) ----------
+  var pressTimer = null;
+  $("corner").addEventListener("pointerdown", function (ev) {
+    ev.stopPropagation();
+    pressTimer = setTimeout(function () {
+      $("server-input").value = serverAddr();
+      $("settings").className = "open";
+      $("server-input").focus();
+    }, 2000);
+  });
+  function cancelPress() { clearTimeout(pressTimer); }
+  $("corner").addEventListener("pointerup", cancelPress);
+  $("corner").addEventListener("pointerleave", cancelPress);
+  $("cancel").addEventListener("click", function () { $("settings").className = ""; });
+  $("save").addEventListener("click", function () {
+    // https/wss 주소는 "wss://호스트"로 남긴다 (보안 연결용). http/ws 나 주소만이면 "호스트:포트"
+    var raw = $("server-input").value.replace(/^\s+|\s+$/g, "");
+    var m = /^(https?|wss?):\/\/([^\/?#]+)/.exec(raw);
+    var v = m ? ((m[1] === "https" || m[1] === "wss") ? "wss://" + m[2] : m[2]) : raw.replace(/[\/?#].*$/, "");
+    if (v) save(KEY, v);
+    $("settings").className = "";
+    if (ws) try { ws.close(); } catch (e) {}
+  });
+
+  // ---------- 크기: 화면 높이·너비 중 짧은 쪽을 거의 다 채운다 ----------
+  function fit() {
+    var size = Math.floor(Math.min(window.innerWidth, window.innerHeight) - 4);
+    dial.setAttribute("width", Math.max(160, size));
+    dial.setAttribute("height", Math.max(160, size));
+  }
+  window.addEventListener("resize", fit);
+  fit();
+
+  setColors();
+  renderStatus();
+  var demo = query("demo");
+  if (demo) {   // 점검용: 서버 없이 해당 단계 체험 중으로 표시
+    connected = true;
+    state = { step: +demo, phase: "result", ready: [1, 2, 3, 4, 5, 6, 7, 8] };
+    setShown(+demo);
+    renderStatus();
+  } else {
+    connect();
+    setInterval(function () { send({ type: "ping" }); }, 15000);   // 연결 유지
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

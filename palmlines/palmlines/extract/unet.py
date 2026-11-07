@@ -56,12 +56,16 @@ class UNetExtractor:
         from .unet_model import UNet
         self.torch = torch
         if device is None:
-            device = "mps" if torch.backends.mps.is_available() else "cpu"
+            device = ("cuda" if torch.cuda.is_available() else
+                      "mps" if torch.backends.mps.is_available() else "cpu")
         self.device = torch.device(device)
         self.net = UNet(3, 1)
         self.net.load_state_dict(torch.load(str(ckpt), map_location="cpu", weights_only=True))
         self.net.to(self.device)
         self.set_bn_mode(bn_mode)
+        import contextlib
+        import threading
+        self._lock = threading.Lock() if self.device.type != "cuda" else contextlib.nullcontext()
 
     def set_bn_mode(self, mode: str):
         self.bn_mode = mode
@@ -81,7 +85,8 @@ class UNetExtractor:
         small = cv2.resize(frame, (NET_SIZE, NET_SIZE), interpolation=cv2.INTER_NEAREST)
         rgb = cv2.cvtColor(small, cv2.COLOR_BGR2RGB)
         x = torch.from_numpy(rgb.astype(np.float32) / 255.0).permute(2, 0, 1).unsqueeze(0).to(self.device)
-        with torch.no_grad():
+        # 여러 워커 스레드가 함께 부른다. CUDA는 동시 호출에 안전하지만 Apple GPU(MPS)는 아니어서 잠근다
+        with self._lock, torch.no_grad():
             logit = self.net(x)[0, 0].float().cpu().numpy()
         logit_full = cv2.resize(logit, (FRAME_W, FRAME_H), interpolation=cv2.INTER_LINEAR)
         # ROI 픽셀 q → 원본 p = M⁻¹q → 템플릿 프레임 H p

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>손금</title>
+</head>
+<body>
+  <main id="app">
+    <section id="capture-view" class="view">
+      <canvas id="camera-canvas"></canvas>
+      <div id="guide" class="guide">
+        <p id="guide-message">카메라를 준비하고 있습니다</p>
+        <div class="gauge"><div id="gauge-fill"></div></div>
+      </div>
+      <div id="capturing" class="capturing" hidden><p>손금을 읽고 있습니다</p></div>
+    </section>
+    <section id="result-view" class="view" hidden>
+      <canvas id="hand-canvas"></canvas>
+      <canvas id="result-canvas" hidden></canvas>
+      <div id="attract-guide" class="attract-guide">
+        <p>손바닥을 카메라에 보여주세요</p>
+        <p class="sub">카메라 앞 20~30cm에서 손을 펴고 잠시 멈춰 주세요</p>
+      </div>
+      <aside id="result-info" class="result-info"></aside>
+      <div id="subtitle" class="subtitle"><div class="subtitle-view"><div class="subtitle-inner"></div></div></div>
+      <div id="steps" class="steps" aria-label="단계"></div>
+      <div id="name-tag" class="name-tag" hidden></div>
+      <button id="stop-btn" class="stop-btn" type="button" aria-label="여기서 멈춤">
+        <span class="stop-dot"></span>여기서 멈춤
+      </button>
+    </section>
+    <div id="submit-modal" class="modal" hidden>
+      <form id="submit-form" class="modal-card" autocomplete="off">
+        <p class="modal-kicker">불쾌한 골짜기 기록</p>
+        <h2 class="modal-title"><span id="submit-step">1</span><small>/ 10 단계</small></h2>
+        <p id="submit-text" class="modal-text"></p>
+        <p class="modal-label">당신의 이름</p>
+        <p id="submit-name" class="modal-name"></p>
+        <div class="modal-actions">
+          <button type="button" id="submit-cancel" class="ghost">계속 보기</button>
+          <button type="submit" id="submit-ok">제출</button>
+        </div>
+        <p id="submit-status" class="modal-status" hidden></p>
+      </form>
+    </div>
+    <div id="thanks" class="thanks" hidden>
+      <p class="thanks-nick"></p>
+      <p>기록되었습니다</p>
+      <p class="sub">다음 분을 위해 처음으로 돌아갑니다</p>
+    </div>
+    <div id="status" class="status"></div>
+    <pre id="debug" class="debug" hidden></pre>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

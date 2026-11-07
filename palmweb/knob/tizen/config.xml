@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
+        id="http://palmweb.local/knob" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="PalmKnob01.knob" package="PalmKnob01" required_version="5.0"/>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>손금 노브</name>
+    <description>손금 체험 해석 단계(1~10) 노브. 같은 Wi-Fi의 맥 서버(/ws/control)에 붙는다.</description>
+    <access origin="*" subdomains="true"/>
+    <tizen:allow-navigation>*</tizen:allow-navigation>
+    <tizen:content-security-policy>default-src * 'self' 'unsafe-inline' data: ws: http:; connect-src * ws: wss: http:</tizen:content-security-policy>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="enable"/>
+</widget>

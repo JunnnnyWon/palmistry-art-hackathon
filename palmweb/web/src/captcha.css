@@ -1,0 +1,77 @@
+/* 예술 캡차: 익숙한 캡차 카드의 뼈대(머리띠·3×3 격자·확인 버튼)를 화이트 톤의 모노톤으로.
+   확인 뒤에는 격자 자리에 고른 손들을 합친 그림이 뜬다.
+   카드 폭은 화면에 맞춰 늘어나고(세로 화면이면 폭 기준, 가로 화면이면 높이 기준) 격자는 항상 정사각형. */
+:root {
+  --bg: #f4f4f2; --card: #ffffff; --card-2: #fafaf9; --line: #e7e7e4; --line-2: #d4d4d0;
+  --ink: #141414; --ink-2: #6b6b68; --ink-3: #a3a39f;
+  --accent: #141414; --accent-ink: #ffffff; --focus: #141414;
+  --sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* 카드 한 변: 격자가 정사각형이 되게 높이·폭 중 작은 쪽 기준 */
+  --card-w: min(92vw, 64vh);   /* 머리띠+격자+바닥 ≈ 카드 폭의 1.4배라 64vh 이면 화면 높이 안에 든다 */
+  --r: calc(var(--card-w) * 0.022);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--sans); overflow: hidden;
+  -webkit-font-smoothing: antialiased; }
+#captcha { height: 100%; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-left, 0px)); }
+.card { width: var(--card-w); background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 24px 60px -20px rgba(0, 0, 0, 0.14); overflow: hidden; display: flex; flex-direction: column; }
+
+/* 머리띠: 흰 바탕에 질문. 진짜 캡차의 파란 머리띠 자리 */
+.head { padding: calc(var(--card-w) * 0.045) calc(var(--card-w) * 0.05) calc(var(--card-w) * 0.038); border-bottom: 1px solid var(--line); }
+.who:not(:empty)::before { content: " · "; }
+.who { color: var(--ink-2); letter-spacing: 0.02em; text-transform: none; }   /* 이 회차 관객의 이름 (감정 + 이름, 서버가 붙인다) */
+.eyebrow { margin: 0 0 0.7em; font-size: calc(var(--card-w) * 0.02); letter-spacing: 0.12em; color: var(--ink-3); text-transform: uppercase; }
+.head h1 { margin: 0; font-size: calc(var(--card-w) * 0.05); line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+.head h1 em { font-style: normal; text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.14em; text-decoration-color: var(--line-2); }
+.sub { margin: 0.8em 0 0; font-size: calc(var(--card-w) * 0.022); line-height: 1.5; color: var(--ink-2); }
+
+/* 격자: 흰 여백 위에 검은 사진 아홉 장 */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(var(--card-w) * 0.012); padding: calc(var(--card-w) * 0.03); background: var(--card); }
+.grid[hidden] { display: none; }   /* 합친 그림이 뜨는 동안 숨긴다. 그림이 없는 조합이면 격자를 다시 보인다 */
+.tile { position: relative; aspect-ratio: 1; overflow: hidden; border: 0; padding: 0; background: var(--card); cursor: pointer; display: block;
+  border-radius: calc(var(--r) * 0.5); }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit; background: #000;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 180ms ease; }
+.tile:hover img { transform: scale(1.02); }
+.tile:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.tile.on img { transform: scale(0.84); }
+.tile.on { box-shadow: inset 0 0 0 2px var(--ink); }   /* 고른 칸: 사진이 줄며 흰 여백 + 검은 테두리 + 체크 */
+.tile .check { position: absolute; left: 4%; top: 4%; width: 17%; aspect-ratio: 1; border-radius: 50%; background: var(--ink); color: var(--accent-ink);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); display: grid; place-items: center;
+  font-size: calc(var(--card-w) * 0.03); font-weight: 700; opacity: 0; transform: scale(0.5); transition: opacity 150ms, transform 150ms; pointer-events: none; }
+.tile.on .check { opacity: 1; transform: none; }
+.card[data-phase="reveal"] .tile { cursor: default; }
+.card[data-phase="reveal"] .tile:not(.on) img { opacity: 0.35; }
+
+/* 공개 단계: 격자 자리에 합친 그림 */
+.merge { margin: 0; padding: calc(var(--card-w) * 0.03); background: var(--card); }
+.merge[hidden] { display: none; }
+.merge-frame { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: calc(var(--r) * 0.5); background: #000; }
+.merge img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transform: scale(1.04); transition: opacity 700ms ease, transform 1400ms ease; }
+.merge.shown img { opacity: 1; transform: none; }
+.merge figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.2em 0.9em 0.8em; font-size: calc(var(--card-w) * 0.021); line-height: 1.4; color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); opacity: 0; transition: opacity 600ms 500ms; }
+.merge.shown figcaption { opacity: 1; }
+
+/* 바닥: 새로고침, 브랜드, 확인 */
+.foot { display: flex; align-items: center; justify-content: space-between; gap: 1em; padding: calc(var(--card-w) * 0.025) calc(var(--card-w) * 0.035); border-top: 1px solid var(--line); background: var(--card-2); }
+.foot-left { display: flex; align-items: center; gap: 0.9em; }
+.icon { font: inherit; font-size: calc(var(--card-w) * 0.036); line-height: 1; width: 1.7em; height: 1.7em; border-radius: 50%; border: 1px solid var(--line-2); background: var(--card); color: var(--ink-2); cursor: pointer;
+  transition: color 120ms, border-color 120ms; }
+.icon:hover { color: var(--ink); border-color: var(--ink-3); }
+.icon:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.brand { display: flex; align-items: center; gap: 0.45em; font: 500 calc(var(--card-w) * 0.022) var(--mono); color: var(--ink-3); letter-spacing: 0.04em; }
+.brand-mark { font-size: 1.2em; filter: grayscale(1) contrast(1.1); }
+.verdict { margin: 0; flex: 1; text-align: right; font-size: calc(var(--card-w) * 0.024); color: var(--ink-2); line-height: 1.45; }
+.verdict b { color: var(--ink); font-weight: 600; }
+.verdict[hidden] { display: none; }
+.verify { font: inherit; font-size: calc(var(--card-w) * 0.028); font-weight: 600; padding: 0.65em 1.6em; border-radius: calc(var(--r) * 0.45); border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); cursor: pointer; white-space: nowrap; transition: background 120ms, color 120ms, border-color 120ms; }
+.verify:hover { background: #2a2a2a; border-color: #2a2a2a; }
+.verify:disabled { background: var(--card); color: var(--ink-3); border-color: var(--line-2); cursor: not-allowed; }
+.verify[hidden] { display: none; }
+.verify:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tile img, .tile .check, .merge img, .merge figcaption { transition: none; } }

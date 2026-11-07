@@ -100,7 +100,8 @@ def extract_lines(frames: list[tuple[np.ndarray, HandObservation]], method: str 
             skel = skel | cls.skeleton
     lines = clip_lines(lines, inside_clip, size)
     ls = PalmLineSet(lines=lines, handedness=frames[-1][1].handedness, landmarks=lm,
-                     roi_image=roi if keep_roi else None, source=method, outline=shape.outline)
+                     roi_image=roi if keep_roi else None, source=method, outline=shape.outline,
+                     mirrored=sum(r.mirrored for r in rects) * 2 > len(rects))
     dbg.update(binary=binary, skeleton=skel, ridge=ridge, ms=(time.perf_counter() - t0) * 1000,
                rectified=rects[-1])
     return ls, dbg

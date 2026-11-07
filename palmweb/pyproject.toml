@@ -1,0 +1,30 @@
+[project]
+name = "palmweb"
+version = "0.1.0"
+description = "손금 웹 체험 서버 (손금 인식 + AI 해석 + 브라우저 연결)"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "fastapi==0.162.0",
+    "uvicorn[standard]==0.54.0",
+    "palmlines",
+    "httpx==0.28.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+palmlines = { path = "../palmlines", editable = true }
+
+[dependency-groups]
+# 슬라이드 라이브 (tools/slides_live.py): 대시보드 스크린샷 + 구글 슬라이드 API 이미지 교체
+live = [
+    "playwright>=1.50",
+    "google-api-python-client>=2.150",
+    "google-auth>=2.35",
+]
+tools = [
+    "pygltflib>=1.16.5",
+    "rtree>=1.4.1",
+    "trimesh>=5.2.0",
+]
